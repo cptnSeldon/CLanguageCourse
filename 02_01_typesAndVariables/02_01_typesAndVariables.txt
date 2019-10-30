@@ -1,0 +1,33 @@
+Exercise 1 and 2 : Best Practice
+
+    - use camelCase or PascalCase
+    - must start with a letter, can't start with a number
+    - mustn't be taken from the reserved keywords
+    - can contain underscores but no spaces
+    - can't contain special characters
+    - a variable can't be declared twice
+
+Exercise 3 :
+
+    a) const double pi;
+    b) char telephoneNumber[10];
+    c) bool isMale; enum {Male, Female} gender;
+    d) float changeRate;
+    e) unsigned char month;
+    f) char nameInitial;
+    g) double stockExchange;
+
+Exercise 4 :
+
+    const double pi = 3.14;
+    unsigned short annee_de_naissance = 1963;
+    unsigned char mois = 10, jour = 10;
+    char letter = 'b';
+
+Exercise 5, 6, 8, 9, 10 :
+
+    have fun ;)
+
+Exercise 7 :
+
+    Least significant bit (LSB) : 0 is positive, 1 is negative
