@@ -7,7 +7,10 @@ int main(void)
     int *p;
     p = a;
 
-    printf("%d %d %d\n", &a[7], p, &a[7] - p);
+    printf("a = %d\n&a[0] = %d\na + 3 = %d\n", a, &a[0], a + 3);
+    printf("*a = %d\na[0] = %d\n*(a + 3) = %d\n", *a, a[0], *(a + 3));
+
+    printf("&a[7] = %d\np = %d\n&a[7] - p = %d\n", &a[7], p, &a[7] - p);
 
 
     return 0;

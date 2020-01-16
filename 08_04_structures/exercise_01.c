@@ -16,8 +16,11 @@ void showTime(TimeTy);
 //MAIN
 int main(void)
 {
-    TimeTy t;
-    t = initTime(5,3,17);
+    TimeTy t = {5, 3, 17};
+    showTime(t);
+    printf("\n");
+
+    t = initTime(2, 2, 57);
     showTime(t);
     printf("\n");
 
