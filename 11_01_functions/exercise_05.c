@@ -29,6 +29,10 @@ int main(int argc, char *argv[]) //int argc, char **argv)
         case 'h':
             printf("Hello vilag!\n");   //helló világ
             break;
+        case 'R':
+        case 'r':
+            printf("Privjet, mir!\n");   //Привет, мир!
+            break;
         default:
             printf("This language is not supported..\n");
             break;
