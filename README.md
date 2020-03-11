@@ -4,6 +4,8 @@ C for INFx fall semester 2019
 ## IDE specifications
 Visual Studio Code with C++17.
 
+[Tutorial : set VSC for C/C++](https://code.visualstudio.com/docs/cpp/config-mingw)
+
 ### Plugins
 #### Language
 - __C/C++__ : ms-vscode.cpptools
