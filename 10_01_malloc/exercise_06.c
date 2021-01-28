@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define MAX_CHAR 200
-#define ARRAY_SIZE 10
+#define ARRAY_SIZE 3
 
 int main(void)
 {

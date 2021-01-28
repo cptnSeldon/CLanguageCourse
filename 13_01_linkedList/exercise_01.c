@@ -11,10 +11,11 @@ typedef struct node
 } Node;
 
 //FUNCTIONS
-void push(Node ** head, int data)
+void pushNode(Node ** head, int data)
 {
     //memory allocation
     Node * newNode = (Node * ) malloc(sizeof(Node));
+
     newNode->data = data;
 
     if(* head == NULL)
@@ -29,9 +30,27 @@ void push(Node ** head, int data)
     }
 }
 
-void print(Node * head)
+void removeNodes(Node ** head)
+{
+    Node * current = * head;
+
+    while (current != NULL)
+    {
+        current = * head;
+        * head = (* head)->next;
+        free(current);
+        current = * head;
+    }
+}
+
+void showList(Node * head)
 {
     Node * current = head;
+    if(current == NULL)
+    {
+        printf("Empty list\n");
+        return;
+    }
     while (current != NULL)
     {
         printf("%d ", current->data);
@@ -45,11 +64,14 @@ int main(void)
 {
     Node * list = NULL;
 
-    push(&list, 1);
-    push(&list, 2);
+    pushNode(&list, 1);
+    pushNode(&list, 2);
 
-    print(list);
+    showList(list);
 
+    removeNodes(&list);
+
+    showList(list);
 
     return 0;
 }

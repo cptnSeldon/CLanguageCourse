@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+#define M_PI acos(-1.0)
+
 int main(void)
 {
     #pragma region EXERCISE 1
@@ -18,12 +20,12 @@ int main(void)
     char a, b, c;
 
     printf("\n\nEnter 3 letters :\n");
-    scanf("%c %c %c", &a, &b, &c);
+    scanf("%c\n%c\n%c", &a, &b, &c);
 
     printf("\nCorresponding ASCII number :\n");
-    printf("%c---->%d\n ", a, a);
-    printf("%c---->%d\n ", b, b);
-    printf("%c---->%d\n ", c, c);
+    printf("%c---->%d\n", a, a);
+    printf("%c---->%d\n", b, b);
+    printf("%c---->%d\n", c, c);
 
     #pragma endregion EXERCISE 2
 

@@ -28,7 +28,7 @@ int main(void)
         {"Minsky", "Marvin", 1927},
         {"Dijkstra", "Edsger", 1930},
         {"Stroustrup", "Bjarne", 1950}
-        };
+    };
 
     printf("People under 80 : \n");
     printPeopleUnder(people, 80);

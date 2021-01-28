@@ -33,7 +33,7 @@ int setInterval(int minimum, int maximum)
 void multiplicationTable(int value)
 {
     //for loop : we DO know how many times it will loop
-    for(int i = 0; i < 12; i++)
+    for(int i = 0; i <= 12; i++)
     {
         printf("%2d * %2d = %3d\n", i, value, i * value);
     }

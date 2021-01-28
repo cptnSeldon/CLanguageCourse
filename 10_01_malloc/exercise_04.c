@@ -12,7 +12,7 @@
 int main(void)
 {
     int line, column;
-    TYPE ** array = NULL;
+    TYPE ** matrix = NULL;
 
     printf("Enter line size : ");
     scanf("%d", &line);
@@ -21,10 +21,10 @@ int main(void)
     scanf("%d", &column);
 
     //memory allocation - lines
-    array = (TYPE **) malloc(line * sizeof(TYPE *));
+    matrix = (TYPE **) malloc(line * sizeof(TYPE *));
 
     //to do memory allocation fails
-    if(array == NULL)
+    if(matrix == NULL)
     {
         printf("Memory allocation failed.\n");
         exit(1);
@@ -32,9 +32,9 @@ int main(void)
 
     for(int i = 0; i < column; i++)
     {
-        array[i] = (TYPE *) malloc(line * sizeof(TYPE));
+        matrix[i] = (TYPE *) malloc(line * sizeof(TYPE));
 
-        if(array[i] == NULL)
+        if(matrix[i] == NULL)
         {
             printf("Memory allocation failed.\n");
             exit(1);
@@ -46,7 +46,7 @@ int main(void)
     {
         for(int j = 0; j < column; j++)
         {
-            array[i][j] = (rand() % (UPPER - LOWER + 1)) + LOWER;
+            matrix[i][j] = (rand() % (UPPER - LOWER + 1)) + LOWER;
         }
     }
 
@@ -57,7 +57,7 @@ int main(void)
     {
         for(int j = 0; j < column; j++)
         {
-            printf("%3d ", array[i][j]);
+            printf("%3d ", matrix[i][j]);
         }
         printf("\n");
     }
@@ -70,7 +70,7 @@ int main(void)
     {
         for(int j = 0; j < column; j++)
         {
-            printf("%3d ", * (* (array + i) + j));
+            printf("%3d ", * (* (matrix + i) + j));
         }
         printf("\n");
     }
@@ -79,11 +79,11 @@ int main(void)
     //memory deallocation
     for(int i = 0; i < column; i++)
     {
-        free(array[i]);
+        free(matrix[i]);
     }
 
-    free(array);
-    array = NULL;
+    free(matrix);
+    matrix = NULL;
 
     //system("pause");
 

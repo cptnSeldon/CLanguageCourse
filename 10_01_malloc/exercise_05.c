@@ -12,7 +12,7 @@
 int main(void)
 {
     int a, b, c;
-    TYPE *** array = NULL;
+    TYPE *** matrix = NULL;
 
     printf("Enter size A : ");
     scanf("%d", &a);
@@ -24,10 +24,10 @@ int main(void)
     scanf("%d", &c);
 
     //memory allocation - lines
-    array = (TYPE ***) malloc(a * sizeof(TYPE **));
+    matrix = (TYPE ***) malloc(a * sizeof(TYPE **));
 
     //to do memory allocation fails
-    if(array == NULL)
+    if(matrix == NULL)
     {
         printf("Memory allocation failed.\n");
         exit(1);
@@ -35,9 +35,9 @@ int main(void)
 
     for(int i = 0; i < b; i++)
     {
-        array[i] = (TYPE **) malloc(b * sizeof(TYPE *));
+        matrix[i] = (TYPE **) malloc(b * sizeof(TYPE *));
 
-        if(array[i] == NULL)
+        if(matrix[i] == NULL)
         {
             printf("Memory allocation failed [i].\n");
             exit(1);
@@ -45,9 +45,9 @@ int main(void)
 
         for(int j = 0; j < c; j++)
         {
-            array[i][j] = (TYPE *) malloc(c * sizeof(TYPE ));
+            matrix[i][j] = (TYPE *) malloc(c * sizeof(TYPE ));
 
-             if(array[i][j] == NULL)
+             if(matrix[i][j] == NULL)
             {
                 printf("Memory allocation failed [i][j].\n");
                 exit(1);
@@ -62,7 +62,7 @@ int main(void)
         {
             for(int k = 0; k < c; k++)
             {
-                array[i][j][k] = (rand() % (UPPER - LOWER + 1)) + LOWER;
+                matrix[i][j][k] = (rand() % (UPPER - LOWER + 1)) + LOWER;
             }
         }
     }
@@ -76,7 +76,7 @@ int main(void)
         {
             for(int k = 0; k < c; k++)
             {
-                printf("%3d\n", array[i][j][k]);
+                printf("%3d\n", matrix[i][j][k]);
             }
             printf("\n");
         }
@@ -93,7 +93,7 @@ int main(void)
         {
             for(int k = 0; k < c; k++)
             {
-                printf("%3d\n", * (* (* (array + i) + j) + k));
+                printf("%3d\n", * (* (* (matrix + i) + j) + k));
             }
             printf("\n");
         }
@@ -106,13 +106,13 @@ int main(void)
     {
         for(int j = 0; j < c; j++)
         {
-            free(array[i][j]);
+            free(matrix[i][j]);
         }
-        free(array[i]);
+        free(matrix[i]);
     }
 
-    free(array);
-    array = NULL;
+    free(matrix);
+    matrix = NULL;
 
     //system("pause");
 

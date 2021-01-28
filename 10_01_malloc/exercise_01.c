@@ -9,7 +9,7 @@ int main(void)
 {
     int size;
     int i = 0;
-    TYPE * pointerToMemoryAdress = NULL;
+    TYPE * pointerToMemoryAddress = NULL;
 
     printf("Choose size of data to allocate : ");
     scanf("%d", &size);
@@ -17,14 +17,14 @@ int main(void)
     do
     {
         //memory allocation
-        pointerToMemoryAdress = (TYPE *) malloc (size * sizeof(TYPE));
+        pointerToMemoryAddress = (TYPE *) malloc (size * sizeof(TYPE));
 
-        if(pointerToMemoryAdress != NULL)
+        if(pointerToMemoryAddress != NULL)
         {
             printf("Bloc number %d has been allocated.\n", i++);
         }
 
-    } while (pointerToMemoryAdress != NULL);
+    } while (pointerToMemoryAddress != NULL);
 
     printf("Out of Memory..\n");
     system("pause");

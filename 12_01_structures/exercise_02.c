@@ -58,7 +58,7 @@ void showFamilyMembers(CustomFamily * family)
     if(family->childCounter > 0)
     {
         printf("Children :\n");
-        for(int i = 0; i <= family->childCounter; i++)
+        for(int i = 0; i < family->childCounter; i++)
         {
             printf("Child %d : %s, %d\n", i+1, family->children[i].name, family->children[i].age);
         }
@@ -70,9 +70,10 @@ void showFamilyMembers(CustomFamily * family)
 int main(void)
 {
     //standard family
-    /*
+
     StandardFamily familyDupont =
-    {"Dupont",
+    {
+        "Dupont",
         {"Eva", 36},
         {"Jean", 38},
         {"Kevin", 4},
@@ -84,7 +85,6 @@ int main(void)
     showTotalAge(familyDupont);
 
     showSizeInByte(familyDupont);
-    */
 
     //custom family
     CustomFamily familyONeill =
@@ -113,6 +113,11 @@ int main(void)
     familyONeill.children[2].age = child3.age;
 
     showFamilyMembers(&familyONeill);
+
+    //deallocation
+    free(familyONeill.children);
+    familyONeill.children = NULL;
+    familyONeill.childCounter = 0;
 
     return 0;
 }

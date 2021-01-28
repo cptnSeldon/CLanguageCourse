@@ -46,7 +46,9 @@ int main(void)
     Complex b;
     Complex c;
 
+    printf("A: ");
     initializeComplex(&a);
+    printf("B: ");
     initializeComplex(&b);
 
     printf("Complex number (initial)\n");
@@ -65,7 +67,7 @@ int main(void)
     showComplex(a);
     printf("B : ");
     showComplex(b);
-    printf("B : ");
+    printf("C : ");
     showComplex(c);
 
     difference(&a, &b, &c);
@@ -75,7 +77,7 @@ int main(void)
     showComplex(a);
     printf("B : ");
     showComplex(b);
-    printf("B : ");
+    printf("C : ");
     showComplex(c);
 
     return 0;
